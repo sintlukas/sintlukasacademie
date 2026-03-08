@@ -25,7 +25,7 @@ export default defineNuxtConfig({
     safelistColors: ['black', 'primary', 'secondary']
   },
   image: {
-    provider: 'netlify'
+    provider: 'ipx'
   },
   compatibilityDate: '2024-08-22'
 

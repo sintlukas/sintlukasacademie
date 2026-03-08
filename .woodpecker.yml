@@ -1,0 +1,52 @@
+when:
+  - event: [ push, manual ]
+    branch: [ main, staging ]
+
+steps:
+  docker_build_prod:
+    image: docker:27-cli
+    environment:
+      DOCKER_HOST: unix:///var/run/docker.sock
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    commands:
+      - docker build -t academie:prod -f deploy/dockerfile .
+    when:
+      - event: [ push, manual ]
+        branch: main
+
+  docker_build_staging:
+    image: docker:27-cli
+    environment:
+      DOCKER_HOST: unix:///var/run/docker.sock
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    commands:
+      - docker build -t academie:staging -f deploy/dockerfile .
+    when:
+      - event: [ push, manual ]
+        branch: staging
+
+  deploy_prod:
+    image: docker:27-cli
+    environment:
+      DOCKER_HOST: unix:///var/run/docker.sock
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    commands:
+      - docker compose --project-name academie -f deploy/docker-compose.yml up -d academie-prod
+    when:
+      - event: [ push, manual ]
+        branch: main
+
+  deploy_staging:
+    image: docker:27-cli
+    environment:
+      DOCKER_HOST: unix:///var/run/docker.sock
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    commands:
+      - docker compose --project-name academie -f deploy/docker-compose.yml up -d academie-staging
+    when:
+      - event: [ push, manual ]
+        branch: staging
