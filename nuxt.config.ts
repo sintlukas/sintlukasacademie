@@ -7,7 +7,6 @@ export default defineNuxtConfig({
   //   documentDriven: true
   // },
   devtools: { enabled: true },
-  extends: ['@nuxt/ui-pro'],
   modules: [
     '@nuxt/content',
     '@nuxt/ui',
@@ -18,7 +17,7 @@ export default defineNuxtConfig({
     preference: 'light'
   },
   mapbox: {
-    accessToken: 'pk.eyJ1IjoicG1jcCIsImEiOiJjbHduc3hkMGExdzNwMmpteWh2M3c3cHZ3In0.4edOOiqp_E93TDvm-1BxCQ'
+    accessToken: process.env.MAPBOX_ACCESS_TOKEN
   },
   css: ['~/assets/css/main.css'],
   ui: {
