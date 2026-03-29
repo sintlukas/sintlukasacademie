@@ -4,7 +4,7 @@
     <elements-banner key="banner-contact" :data="{ title: '', image: data.images }" />
     <div class="mx-auto px-6 lg:px-8 max-w-7xl">
 
-      <UPageGrid :ui="{wrapper: 'grid grid-cols-1 md:grid-cols-5 xl:grid-cols-5 gap-8'}">
+      <div class="grid grid-cols-1 md:grid-cols-5 xl:grid-cols-5 gap-8">
 
           <div class="flex flex-col col-span-full md:col-span-2 gap-8">
             <h1 class="text-4xl pb-0">Contact</h1>
@@ -32,7 +32,7 @@
 <!--            </MapboxMap>-->
 <!--          </client-only>-->
         </div>
-      </UPageGrid>
+      </div>
     </div>
 
 

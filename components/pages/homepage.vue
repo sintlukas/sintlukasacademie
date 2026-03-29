@@ -18,7 +18,7 @@
 
 
   <div class="mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
-    <UPageGrid :ui="{wrapper: 'grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-16'}">
+    <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-16">
       <div class="col-span-full grid grid-cols-1 md:grid-cols-[1fr_1px_1fr] gap-8">
 
         <!-- BLOCK: NEWS-->
@@ -59,14 +59,14 @@
         </div>
       </template>
 
-    </UPageGrid>
+    </div>
   </div>
   <!-- START GRID BACKGROUND -->
   <div class="mt-8">
     <elements-background :data="{style: 1}" />
   </div>
 
-  <UPageGrid class="mx-auto px-0 md:px-6 lg:px-8 max-w-7xl xl:grid-cols-2">
+  <div class="mx-auto px-0 md:px-6 lg:px-8 max-w-7xl xl:grid-cols-2">
 
 
     <!-- BLOCK: CALENDAR -->
@@ -98,7 +98,7 @@
       <div class="h-8"></div>
     </template>
 
-  </UPageGrid>
+  </div>
 </template>
 
 <script setup>

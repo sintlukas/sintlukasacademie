@@ -2,11 +2,11 @@
   <div class="relative overflow-clip w-full">
     <main-header class="z-40"/>
 
-    <UPage >
-      <UPageBody :ui="{ wrapper: 'mt-0 pb-0'}">
+    <div>
+      <div class="mt-0 pb-0">
         <slot />
-      </UPageBody>
-    </UPage>
+      </div>
+    </div>
     <main-footer />
   </div>
 </template>
