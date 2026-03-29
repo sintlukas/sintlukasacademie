@@ -11,13 +11,9 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxt/ui',
     '@nuxt/image',
-    'nuxt-mapbox'
   ],
   colorMode: {
     preference: 'light'
-  },
-  mapbox: {
-    accessToken: process.env.MAPBOX_ACCESS_TOKEN
   },
   css: ['~/assets/css/main.css'],
   ui: {
