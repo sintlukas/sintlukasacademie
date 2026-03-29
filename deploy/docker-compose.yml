@@ -5,7 +5,7 @@ services:
     restart: unless-stopped
     labels:
       - traefik.enable=true
-      - traefik.http.routers.academie-prod.rule=Host(`sintlukasacademie.brussels`)
+      - traefik.http.routers.academie-prod.rule=Host(`academie.sintlukas.com`)
       - traefik.http.routers.academie-prod.entrypoints=websecure
       - traefik.http.routers.academie-prod.tls=true
       - traefik.http.routers.academie-prod.tls.certresolver=letsencrypt
@@ -18,7 +18,7 @@ services:
     restart: unless-stopped
     labels:
       - traefik.enable=true
-      - traefik.http.routers.academie-staging.rule=Host(`staging.sintlukasacademie.brussels`)
+      - traefik.http.routers.academie-staging.rule=Host(`academie-staging.sintlukas.com`)
       - traefik.http.routers.academie-staging.entrypoints=websecure
       - traefik.http.routers.academie-staging.tls=true
       - traefik.http.routers.academie-staging.tls.certresolver=letsencrypt
