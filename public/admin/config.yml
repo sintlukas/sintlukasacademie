@@ -3,13 +3,15 @@ i18n:
   locales: [nl, fr, en]
   default_locale: nl
 
-logo_url: https://sintlukas.netlify.app/assets/site/logo.svg
+logo_url: https://academie.sintlukas.com/assets/site/logo.svg
 locale: 'nl'
 
 backend:
   name: github
   repo: sintlukas/sintlukasacademie
   branch: main
+  base_url: https://academie-staging.sintlukas.com
+  auth_endpoint: /api/auth
 
 
 media_folder: /public/assets/uploads
