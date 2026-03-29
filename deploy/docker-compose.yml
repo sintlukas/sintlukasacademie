@@ -4,9 +4,9 @@ services:
     container_name: academie-prod
     restart: unless-stopped
     environment:
-      GITHUB_CLIENT_ID: ${PROD_GITHUB_CLIENT_ID}
-      GITHUB_CLIENT_SECRET: ${PROD_GITHUB_CLIENT_SECRET}
-      SITE_URL: https://academie.sintlukas.com
+      NUXT_GITHUB_CLIENT_ID: ${PROD_GITHUB_CLIENT_ID}
+      NUXT_GITHUB_CLIENT_SECRET: ${PROD_GITHUB_CLIENT_SECRET}
+      NUXT_PUBLIC_SITE_URL: https://academie.sintlukas.com
     networks:
       - pangolin
     labels:
@@ -23,9 +23,9 @@ services:
     container_name: academie-staging
     restart: unless-stopped
     environment:
-      GITHUB_CLIENT_ID: ${STAGING_GITHUB_CLIENT_ID}
-      GITHUB_CLIENT_SECRET: ${STAGING_GITHUB_CLIENT_SECRET}
-      SITE_URL: https://academie-staging.sintlukas.com
+      NUXT_GITHUB_CLIENT_ID: ${STAGING_GITHUB_CLIENT_ID}
+      NUXT_GITHUB_CLIENT_SECRET: ${STAGING_GITHUB_CLIENT_SECRET}
+      NUXT_PUBLIC_SITE_URL: https://academie-staging.sintlukas.com
     networks:
       - pangolin
     labels:
