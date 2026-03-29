@@ -3,6 +3,8 @@ services:
     image: academie:prod
     container_name: academie-prod
     restart: unless-stopped
+    networks:
+      - pangolin
     labels:
       - traefik.enable=true
       - traefik.http.routers.academie-prod.rule=Host(`academie.sintlukas.com`)
@@ -16,6 +18,8 @@ services:
     image: academie:staging
     container_name: academie-staging
     restart: unless-stopped
+    networks:
+      - pangolin
     labels:
       - traefik.enable=true
       - traefik.http.routers.academie-staging.rule=Host(`academie-staging.sintlukas.com`)
