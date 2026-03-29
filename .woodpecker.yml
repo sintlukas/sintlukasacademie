@@ -31,6 +31,10 @@ steps:
     image: docker:27-cli
     environment:
       DOCKER_HOST: unix:///var/run/docker.sock
+      PROD_GITHUB_CLIENT_ID:
+        from_secret: ACADEMIE_PROD_GITHUB_CLIENT_ID
+      PROD_GITHUB_CLIENT_SECRET:
+        from_secret: ACADEMIE_PROD_GITHUB_CLIENT_SECRET
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     commands:
@@ -43,6 +47,10 @@ steps:
     image: docker:27-cli
     environment:
       DOCKER_HOST: unix:///var/run/docker.sock
+      STAGING_GITHUB_CLIENT_ID:
+        from_secret: ACADEMIE_STAGING_GITHUB_CLIENT_ID
+      STAGING_GITHUB_CLIENT_SECRET:
+        from_secret: ACADEMIE_STAGING_GITHUB_CLIENT_SECRET
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     commands:

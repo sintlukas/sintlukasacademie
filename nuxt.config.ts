@@ -1,5 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  runtimeConfig: {
+    githubClientId: process.env.GITHUB_CLIENT_ID,
+    githubClientSecret: process.env.GITHUB_CLIENT_SECRET,
+    public: {
+      siteUrl: process.env.SITE_URL
+    }
+  },
   build: {
     transpile: ['@egjs/vue-grid']
   },
