@@ -7,10 +7,12 @@ steps:
     image: docker:27-cli
     environment:
       DOCKER_HOST: unix:///var/run/docker.sock
+      MAPBOX_ACCESS_TOKEN:
+        from_secret: ACADEMIE_MAPBOX_ACCESS_TOKEN
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     commands:
-      - docker build -t academie:prod -f deploy/dockerfile .
+      - docker build --build-arg MAPBOX_ACCESS_TOKEN=$MAPBOX_ACCESS_TOKEN -t academie:prod -f deploy/dockerfile .
     when:
       - event: [ push, manual ]
         branch: main
@@ -19,10 +21,12 @@ steps:
     image: docker:27-cli
     environment:
       DOCKER_HOST: unix:///var/run/docker.sock
+      MAPBOX_ACCESS_TOKEN:
+        from_secret: ACADEMIE_MAPBOX_ACCESS_TOKEN
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     commands:
-      - docker build -t academie:staging -f deploy/dockerfile .
+      - docker build --build-arg MAPBOX_ACCESS_TOKEN=$MAPBOX_ACCESS_TOKEN -t academie:staging -f deploy/dockerfile .
     when:
       - event: [ push, manual ]
         branch: staging
