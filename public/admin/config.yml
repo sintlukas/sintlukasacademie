@@ -7,10 +7,9 @@ logo_url: https://sintlukas.netlify.app/assets/site/logo.svg
 locale: 'nl'
 
 backend:
-  name: git-gateway
+  name: github
+  repo: sintlukas/sintlukasacademie
   branch: main
-  repo: pmcp/sintLukas2024
-  squash_merges: true
 
 
 media_folder: /public/assets/uploads
