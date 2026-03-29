@@ -2,7 +2,7 @@
   <div class="bg-white self-stretch">
     <div class="relative" :class="[fillheight ? 'h-full' : 'h-40']">
       <iframe
-        :src="`https://www.openstreetmap.org/export/embed.html?mlat=${lat}&mlon=${lng}&zoom=15&layer=mapnik`"
+        :src="osmSrc"
         style="width: 100%; height: 100%; border: 0;"
         loading="lazy"
       />
@@ -43,4 +43,10 @@ const { data } = await useAsyncData(`location-${props.location}`, () => queryCon
 const coordinates = computed(() => JSON.parse(data.value.location).coordinates)
 const lng = computed(() => coordinates.value[0])
 const lat = computed(() => coordinates.value[1])
+
+const delta = 0.004
+const osmSrc = computed(() => {
+  const bbox = `${lng.value - delta},${lat.value - delta},${lng.value + delta},${lat.value + delta}`
+  return `https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${lat.value},${lng.value}`
+})
 </script>
